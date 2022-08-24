@@ -4,21 +4,42 @@
 <head>
     <meta charset="UTF-8">
     <title>CARS</title>
-
 </head>
-<br><br>
 <body>
-<div>
     <h2>Cars Table</h2>
-    <table>
-    <tr><th>Carbrand</th><th>Colour</th><th>Carowner</th></tr>
-    <th:block th:each="car : ${showCar}">
-        <tr><td><p th:text="${car.getCarDrand()}"/></td>
-            <td><p th:text="${car.getColour()}"/></td>
-            <td><p th:text="${car.getCarOwner()}"/></td>
+    <table th:border="1">
+        <thead>
+        <tr>
+            <th>CARBRAND</th>
+            <th>COLOUR</th>
+            <th>CAROWNER</th>
         </tr>
-    </th:block>
+        </thead>
+        <tbody>
+        <tr th:each="car : ${showCar}">
+            <td th:text="${car.getCarBrand()}">VALUE</td>
+            <td th:text="${car.getColour()}">VALUE</td>
+            <td th:text="${car.getCarOwner()}">VALUE</td>
+        </tr>
+        </tbody>
     </table>
-</div>
+
+
+
+<!--    <table th:border="2">-->
+<!--&lt;!&ndash;    <tr><th>Carbrand</th><th>Colour</th><th>Carowner</th></tr>&ndash;&gt;-->
+<!--&lt;!&ndash;    <th:block th:each="car : ${showCar}">&ndash;&gt;-->
+<!--&lt;!&ndash;        <tr><td><p th:text="${car.getCarDrand()}"/></td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td><p th:text="${car.getColour()}"/></td>&ndash;&gt;-->
+<!--&lt;!&ndash;            <td><p th:text="${car.getCarOwner()}"/></td>&ndash;&gt;-->
+<!--&lt;!&ndash;        </tr>&ndash;&gt;-->
+<!--&lt;!&ndash;    </th:block>&ndash;&gt;-->
+<!--        <th:block th:each="car : ${showCar}">-->
+<!--            CarBrand:  <a th:text="${car.getCarBrand()}"></a>-->
+<!--            Color: <a th:text="${car.getColour()}"></a>-->
+<!--            CarOwner: <a th:text="${car.getCarOwner()}"></a>-->
+<!--        </th:block>-->
+<!--    </table>-->
+
 </body>
 </html>

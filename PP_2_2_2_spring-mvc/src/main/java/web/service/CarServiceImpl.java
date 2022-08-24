@@ -22,9 +22,9 @@ public class CarServiceImpl implements CarService{
 
 
     @Override
-    public List<Car> showCar(int someNumber) {
+    public List<Car> showCar(Integer count) {
         List<Car> listOfCars = new ArrayList<>();
-        for (int i = 0; i < someNumber; i++) {
+        for (int i = 0; i < count; i++) {
             listOfCars.add(carList.get(i));
         }
         return listOfCars;

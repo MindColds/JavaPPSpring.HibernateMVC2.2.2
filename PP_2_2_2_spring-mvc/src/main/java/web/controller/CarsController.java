@@ -15,12 +15,12 @@ public class CarsController {
     @Autowired
     private CarService carService;
 
-    public CarsController(CarServiceImpl carService) {
+    public CarsController(CarService carService) {
         this.carService = carService;
     }
 
     @RequestMapping("/cars")
-    public String showCarList(@RequestParam(value = "count", required = false) int count, ModelMap model) {
+    public String showCarList(@RequestParam(defaultValue = "5") Integer count, ModelMap model) {
         model.addAttribute("showCar", carService.showCar(count));
         return "/cars";
     }
